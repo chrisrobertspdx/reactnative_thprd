@@ -22,8 +22,8 @@ export default class App extends Component {
 
   presentSecondScreen = () => {
     Navigation.showModal({
-      screen: 'navigation.SecondScreen',
-      title: 'Second Screen'
+      screen: 'navigation.ModalScreen',
+      title: 'Modal Screen'
     });
   };
 
@@ -34,7 +34,10 @@ export default class App extends Component {
           Welcome to React Native Navigation example!
         </Text>
         <Button title="Push Second Screen" onPress={this.pushSecondScreen} />
-        <Button title="Present Second Screen" onPress={this.presentSecondScreen} />
+        <Button
+          title="Present Modal Screen"
+          onPress={this.presentSecondScreen}
+        />
       </View>
     );
   }
