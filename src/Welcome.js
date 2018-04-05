@@ -13,12 +13,19 @@ export default class App extends Component {
     navBarHidden: true
   };
 
-  showSecondScreen = () => {
+  pushSecondScreen = () => {
     this.props.navigator.push({
       screen: 'navigation.SecondScreen',
       title: 'Second Screen'
     });
-  }
+  };
+
+  presentSecondScreen = () => {
+    Navigation.showModal({
+      screen: 'navigation.SecondScreen',
+      title: 'Second Screen'
+    });
+  };
 
   render() {
     return (
@@ -26,7 +33,8 @@ export default class App extends Component {
         <Text style={styles.welcome}>
           Welcome to React Native Navigation example!
         </Text>
-        <Button title='Push Second Screen' onPress={this.showSecondScreen} />
+        <Button title="Push Second Screen" onPress={this.pushSecondScreen} />
+        <Button title="Present Second Screen" onPress={this.presentSecondScreen} />
       </View>
     );
   }
