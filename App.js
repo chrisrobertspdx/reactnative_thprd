@@ -1,16 +1,45 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import { Navigation } from "react-native-navigation";
+import { Provider } from "react-redux";
 
-import { Navigation } from 'react-native-navigation';
-import { registerScreens } from './screens';
+import AuthScreen from "./src/screens/Auth/Auth";
+import SharePlaceScreen from "./src/screens/SharePlace/SharePlace";
+import FindPlaceScreen from "./src/screens/FindPlace/FindPlace";
+import PlaceDetailScreen from "./src/screens/PlaceDetail/PlaceDetail";
+import SideDrawer from "./src/screens/SideDrawer/SideDrawer";
+import configureStore from "./src/store/configureStore";
 
-registerScreens();
+const store = configureStore();
 
+// Register Screens
+Navigation.registerComponent(
+  "awesome-places.AuthScreen", 
+  () => AuthScreen, 
+  store, 
+  Provider);
+Navigation.registerComponent(
+  "awesome-places.SharePlaceScreen", 
+  () => SharePlaceScreen,
+  store,
+  Provider);
+Navigation.registerComponent(
+  "awesome-places.FindPlaceScreen",
+  () => FindPlaceScreen,
+  store,
+  Provider);
+Navigation.registerComponent(
+  "awesome-places.PlaceDetailScreen",
+  () => PlaceDetailScreen,
+  store,
+  Provider);
+Navigation.registerComponent(
+    "awesome-places.SideDrawer",
+    () => SideDrawer
+  );
+
+// Start a App
 Navigation.startSingleScreenApp({
   screen: {
-    screen: 'navigation.Welcome'
+    screen: "awesome-places.AuthScreen",
+    title: "Login"
   }
 });
