@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ScrollView, Alert } from 'react-native';
 import { connect } from 'react-redux';
 
-
+import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 import { addPlace } from '../../store/actions/index';
 
 class SharePlaceScreen extends Component {
@@ -28,24 +28,29 @@ class SharePlaceScreen extends Component {
     render () {
         return (
             <ScrollView>
-                <Text>Share a Place with us</Text>
-                <View style={styles.placeholder}>
-                    <Text>Image Preview</Text>
+                <View style={styles.container}>
+                    <Text>Share a Place with us</Text>
+                    <View style={styles.placeholder}>
+                        <Text>Image Preview</Text>
+                    </View>
+                    <Button title="Pick Image" onPress={()=>Alert.alert("onPress")} />
+                    <View style={styles.placeholder}>
+                        <Text>Map</Text>
+                    </View>
+                    <Button title="Locate Me" onPress={()=>Alert.alert("onPress")} />
+                    <DefaultInput placeholder="Place Name" />
+                    <Button title="Share the Place!" onPress={()=>Alert.alert("onPress")} />
                 </View>
-                <Button title="Pick Image" />
-                <View style={styles.placeholder}>
-                    <Text>Map</Text>
-                </View>
-                <Button title="Locate Me" />
-                <TextInput placeholder="Place Name" />
-                <Button title="Share the Place!" />
-                
             </ScrollView>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center"
+    },
     placeholder: {
         borderWidth: 1,
         borderColor: "black",
