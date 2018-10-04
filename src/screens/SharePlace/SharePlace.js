@@ -33,13 +33,19 @@ class SharePlaceScreen extends Component {
                     <View style={styles.placeholder}>
                         <Text>Image Preview</Text>
                     </View>
-                    <Button title="Pick Image" onPress={()=>Alert.alert("onPress")} />
+                    <View style={styles.button}>
+                        <Button title="Pick Image" onPress={()=>Alert.alert("onPress")} />
+                    </View>
                     <View style={styles.placeholder}>
                         <Text>Map</Text>
                     </View>
-                    <Button title="Locate Me" onPress={()=>Alert.alert("onPress")} />
+                    <View style={styles.button}>
+                        <Button title="Locate Me" onPress={()=>Alert.alert("onPress")} />
+                    </View>
                     <DefaultInput placeholder="Place Name" />
-                    <Button title="Share the Place!" onPress={()=>Alert.alert("onPress")} />
+                    <View style={styles.button}>
+                        <Button title="Share the Place!" onPress={()=>Alert.alert("onPress")} />
+                    </View>
                 </View>
             </ScrollView>
         );
@@ -57,6 +63,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#eee",
         width: "80%",
         height: 250
+    },
+    button: {
+        margin: 8
     }
 })
 
