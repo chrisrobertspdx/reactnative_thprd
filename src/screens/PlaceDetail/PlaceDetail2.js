@@ -14,7 +14,7 @@ import { deletePlace } from '../../store/actions/index'
 
 //import Icon from "react-native-vector-icons/Ionicons";
 
-class placeDetail extends Component {
+class placeDetail2 extends Component {
   placeDeletedHandler = () => {
     this.props.onDeletePlace(this.props.selectedPlace.key);
     this.props.navigator.pop();
@@ -66,4 +66,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null,mapDispatchToProps)(placeDetail);
+export default connect(null,mapDispatchToProps)(placeDetail2);
+
+;

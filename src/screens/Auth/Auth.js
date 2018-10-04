@@ -5,7 +5,7 @@ import startMainTabs from "../MainTabs/startMainTabs";
 import DefaultInput from "../../components/UI/DefaultInput/DefaultInput";
 import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import MainText from "../../components/UI/MainText/MainText";
-import backgroundImage from "../../assets/background.jpg";
+import backgroundImage from "../../assets/background3.jpg";
 import logo from "../../assets/thprdLogo2.jpg";
 
 class AuthScreen extends Component {
@@ -15,12 +15,14 @@ class AuthScreen extends Component {
 
   render() {
     return (
+      <ImageBackground source={backgroundImage} style={styles.backgroundImage}> 
       <View style={styles.container}>
-        
+          
           <Image 
           source={logo} 
-          style={{width:"100%", resizeMode: "contain"}}
+          style={styles.logoContainer}
         />
+          
           <MainText>
               <HeadingText>Please Log In</HeadingText>
           </MainText>
@@ -31,9 +33,8 @@ class AuthScreen extends Component {
               <DefaultInput placeholder="Confirm Password" style={styles.input}/>
           </View>
           <Button title="Submit" onPress={this.loginHandler} />
-        
       </View>
-    
+      </ImageBackground>
     );
   }
 }
@@ -42,8 +43,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "flex-start",
-    alignItems: "center",
-    backgroundColor: 'white'
+    alignItems: "center"
   },
   inputContainer: {
     width: "80%"
@@ -56,6 +56,11 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1
   },
+  logoContainer: {
+    width:"100%", 
+    resizeMode: "contain",
+    opacity: .9
+  }
 });
 
 export default AuthScreen;

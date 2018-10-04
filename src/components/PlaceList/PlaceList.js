@@ -12,9 +12,11 @@ const placeList = props => {
         <ListItem
           placeName={info.item.name}
           placeImage={info.item.image}
+          placeKey={info.item.key}
           onItemPressed={() => props.onItemSelected(info.item.key)}
         />
       )}
+      
     />
   );
 };
