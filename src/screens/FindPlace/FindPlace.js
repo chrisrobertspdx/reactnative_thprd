@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { connect } from "react-redux";
+import QRCode from 'react-native-qrcode';
 
 import PlaceList from "../../components/PlaceList/PlaceList";
 
@@ -35,7 +36,13 @@ class FindPlaceScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+        <Text style={{fontSize:30,margin:8}}>Chris Roberts</Text>
+        <QRCode
+          value={"150292"}
+          size={300}
+          bgColor='black'
+          fgColor='white'/>
         <PlaceList
           places={this.props.places}
           onItemSelected={this.itemSelectedHandler}

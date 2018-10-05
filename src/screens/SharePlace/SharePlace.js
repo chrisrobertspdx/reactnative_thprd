@@ -3,6 +3,9 @@ import { View, Text, TextInput, Button, StyleSheet, ScrollView, Alert, Image } f
 import { connect } from 'react-redux';
 
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
+import PickImage from '../../components/PickImage/PickImage';
+import PickLocation from '../../components/PickLocation/PickLocation';
+import PlaceInput from '../../components/PlaceInput/PlaceInput';
 import MainText from '../../components/UI/MainText/MainText';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
 import { addPlace } from '../../store/actions/index';
@@ -35,19 +38,9 @@ class SharePlaceScreen extends Component {
                     <MainText>
                         <HeadingText>Share a Place with us</HeadingText>
                     </MainText>
-                    <View style={styles.placeholder}>
-                        <Image source={hmt} style={styles.previewImage} />
-                    </View>
-                    <View style={styles.button}>
-                        <Button title="Pick Image" onPress={()=>Alert.alert("onPress")} />
-                    </View>
-                    <View style={styles.placeholder}>
-                        <Text>Map</Text>
-                    </View>
-                    <View style={styles.button}>
-                        <Button title="Locate Me" onPress={()=>Alert.alert("onPress")} />
-                    </View>
-                    <DefaultInput placeholder="Place Name" />
+                    <PickImage />
+                    <PickLocation />
+                    <PlaceInput />
                     <View style={styles.button}>
                         <Button title="Share the Place!" onPress={()=>Alert.alert("onPress")} />
                     </View>
